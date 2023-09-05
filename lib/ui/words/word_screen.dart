@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:english_words/data/getx_controllers/words_controller.dart';
 import 'package:english_words/ui/multiplication/multiplication_screen.dart';
+import 'package:english_words/ui/widgets/detail_screen.dart';
 import 'package:english_words/ui/widgets/global_text_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,10 +32,11 @@ class _WordsScreenState extends State<WordsScreen> {
         title: const Text("Words Screen"),
         actions: [
           IconButton(onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return MultiplicationScreen();
-            }));
-          }, icon: Icon(Icons.add))
+            Get.to(() => const MultiplicationScreen());
+            // Navigator.push(context, MaterialPageRoute(builder: (context){
+            //   return MultiplicationScreen();
+            // }));
+          }, icon: const Icon(Icons.add))
         ],
       ),
       body: Stack(
@@ -49,6 +51,9 @@ class _WordsScreenState extends State<WordsScreen> {
                   }),
                   ...List.generate(wordsController.words.length, (index) {
                     return ListTile(
+                      onTap: (){
+                        Get.to(() => DetailScreen(wordModel: wordsController.words[index]));
+                      },
                       contentPadding: const EdgeInsets.all(24),
                       title: Row(
                         children: [
