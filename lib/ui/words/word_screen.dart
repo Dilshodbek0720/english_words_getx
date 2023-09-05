@@ -36,7 +36,7 @@ class _WordsScreenState extends State<WordsScreen> {
             // Navigator.push(context, MaterialPageRoute(builder: (context){
             //   return MultiplicationScreen();
             // }));
-          }, icon: const Icon(Icons.add))
+          }, icon: const Icon(Icons.navigate_next))
         ],
       ),
       body: Stack(
@@ -75,7 +75,15 @@ class _WordsScreenState extends State<WordsScreen> {
                       ),
                       subtitle: Text(wordsController.words[index].meanings[0].definitions[0].definition),
                     );
-                  })
+                  }),
+                  wordsController.words.isEmpty ? const SizedBox(
+                    height: 300,
+                      child: Center(child: Text("Bunday so'z topilmadi!", style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500
+                      ),),
+                      ),
+                  ):const SizedBox()
                 ],
               );
             },

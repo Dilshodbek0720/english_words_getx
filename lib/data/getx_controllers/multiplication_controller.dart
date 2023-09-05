@@ -7,8 +7,7 @@ class MultiplicationController {
   Stream<int> get firstNumberStream => _firstNumberStream.stream;
   Stream<int> get secondNumberStream => _secondNumberStream.stream;
 
-  Stream<int> get multiplicationStream =>
-      Rx.combineLatest2(firstNumberStream, secondNumberStream, (a, b) => a * b);
+  Stream<int> get multiplicationStream => Rx.combineLatest2(firstNumberStream, secondNumberStream, (a, b) => a * b);
 
   void updateFirstNumber(int number) {
     _firstNumberStream.sink.add(number);

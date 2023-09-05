@@ -19,6 +19,7 @@ class WordsController extends GetxController{
     if(loadedWords.isNotEmpty){
       words.value = loadedWords;
     }else{
+      words.value = [];
       debugPrint("!!! ERROR !!!");
     }
   }
