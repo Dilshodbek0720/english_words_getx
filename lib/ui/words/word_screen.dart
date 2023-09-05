@@ -61,10 +61,10 @@ class _WordsScreenState extends State<WordsScreen> {
                           }, icon: const Icon(Icons.music_note, color: Colors.redAccent,)),
                           const Spacer(),
                           TextButton(onPressed: () async{
-                            // if(wordsController.words[index].phonetics[0].sourceUrl.isNotEmpty){
-                            //   Uri url = Uri.parse(wordsController.words[index].phonetics[0].sourceUrl);
-                            //   await launchUrl(url);
-                            // }
+                            Uri url = Uri.parse(wordsController.words[index].phonetics[0].sourceUrl);
+                            if(wordsController.words[index].phonetics[0].sourceUrl.isNotEmpty){
+                              await launchUrl(url);
+                            }
                           }, child: const Text("Wikipedia"))
                         ],
                       ),
