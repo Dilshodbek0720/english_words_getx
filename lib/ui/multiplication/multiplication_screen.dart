@@ -50,7 +50,7 @@ class _MultiplicationScreenState extends State<MultiplicationScreen> {
                 if (snapshot.hasData) {
                   return Text(
                     'Multiplication:\n ${snapshot.data}',
-                    style: TextStyle(
+                    style: const TextStyle(
                     fontSize: 23,
                   ),
                     textAlign: TextAlign.center,
