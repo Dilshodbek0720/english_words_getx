@@ -1,6 +1,4 @@
-import 'package:english_words/ui/words/word_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,12 +9,16 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
       ),
-      home: const WordsScreen(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Default"),
+        ),
+      ),
     );
   }
 }
