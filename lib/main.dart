@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Default"),
+          title: const Text("Default"),
         ),
       ),
     );
